@@ -13,13 +13,19 @@ class Renderer extends \Nette\Object implements IRenderer {
 
 	private $minRenderDestinations = 1;
 	private $container;
+	private $listElement;
 
 	public function __construct() {
 		$this->container = Html::el('nav');
+		$this->listElement = Html::el('li');
 	}
 
 	public function setContainer(Html $container){
 		$this->container = $container;
+	}
+
+	public function setListElement(Html $el){
+		$this->listElement = $el;
 	}
 
 	/**
@@ -31,7 +37,7 @@ class Renderer extends \Nette\Object implements IRenderer {
 			return '';
 		}
 		$container = $this->container;
-		$ul = Html::el('ul');
+		$ul = $this->listElement;
 		foreach($navigator->getDestinations() as $params){
 			$li = Html::el('li');
 			$a = Html::el('a')->setHtml($params['name'])->setAttribute('href', $params['link']);
@@ -44,14 +50,3 @@ class Renderer extends \Nette\Object implements IRenderer {
 
 }
 
-//      <div class="small-breadcrumb">
-//         <div class="container">
-//            <div class=" breadcrumb-link">
-//               <ul>
-//                  <li><a href="index.html">Home Page</a></li>
-//                  <li><a href="#">Pages</a></li>
-//                  <li><a class="active" href="#">Contact</a></li>
-//               </ul>
-//            </div>
-//         </div>
-//      </div>
