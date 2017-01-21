@@ -17,7 +17,7 @@ class Renderer extends \Nette\Object implements IRenderer {
 
 	public function __construct() {
 		$this->container = Html::el('nav');
-		$this->listElement = Html::el('li');
+		$this->listElement = Html::el('ul');
 	}
 
 	public function setContainer(Html $container){
