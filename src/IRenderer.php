@@ -5,6 +5,7 @@
  */
 
 namespace JP\Navigator;
+use Nette\Utils\Html;
 
 /**
  * IRenderer
@@ -12,6 +13,11 @@ namespace JP\Navigator;
  */
 
 interface IRenderer  {
-	
+
+	/**
+	 * @param INavigator $navigator
+	 * @return Html
+	 */
+	public function toString(INavigator $navigator);
 	
 }

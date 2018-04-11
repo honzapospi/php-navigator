@@ -2,6 +2,7 @@
 
 namespace JP\Navigator;
 use Nette\Utils\Html;
+use Nette\SmartObject;
 
 /**
  * Copyright (c) Jan Pospisil (http://www.jan-pospisil.cz)
@@ -9,7 +10,8 @@ use Nette\Utils\Html;
  * @author Jan Pospisil
  */
 
-class Renderer extends \Nette\Object implements IRenderer {
+class Renderer implements IRenderer {
+	use SmartObject;
 
 	private $minRenderDestinations = 1;
 	private $container;

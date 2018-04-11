@@ -1,6 +1,7 @@
 <?php
 namespace JP\Navigator;
 use Nette\Localization\ITranslator;
+use Nette\SmartObject;
 
 /**
  * Copyright (c) Jan Pospisil (http://www.jan-pospisil.cz)
@@ -8,7 +9,8 @@ use Nette\Localization\ITranslator;
  * @author Jan Pospisil
  */
 
-class Navigator extends \Nette\Object implements INavigator {
+class Navigator implements INavigator {
+	use SmartObject;
 
 	private $destinations;
 	private $renderer;
